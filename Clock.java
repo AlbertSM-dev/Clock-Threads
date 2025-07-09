@@ -1,9 +1,8 @@
-import java.sql.Date;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Clock  {
-	  private volatile String currentTime;
+	private volatile String currentTime;
     private volatile boolean running = true; 
 
     public Clock() {
@@ -29,7 +28,7 @@ public class Clock  {
             while (running) {
                 updateTime();
                 try {
-                    Thread.sleep(100); // Update every 100 milliseconds
+                    Thread.sleep(100);//print each 100 milliseconds
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                     running = false;
@@ -44,7 +43,7 @@ public class Clock  {
             while (running) {
                 System.out.println(getCurrentTime());
                 try {
-                    Thread.sleep(1000); // Print each 1 second
+                    Thread.sleep(1000);//print each 1 second
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                     running = false;
@@ -53,8 +52,8 @@ public class Clock  {
             }
         };
     }
-
-    public void stopClock() {
+    
+    /*public void stopClock() {
         this.running = false;
-    }    
+    }*/   
 }
